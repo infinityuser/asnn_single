@@ -71,7 +71,7 @@ int corresp(int y, int x, int cy, int cx) {
 }
 
 void makeEpoch (FILE * dump) {
-	lightning = 0.1;
+	lightning = 0.01;
 	std::vector<double> saver(24, 0.01);  
 	int ty, tx;
 
@@ -91,12 +91,13 @@ void makeEpoch (FILE * dump) {
 		}
 	
 	charac.soul.setIn(saver, 0, 0);
+	charac.soul.setIn(saver, 3, 0);
 
-	charac.soul.exec(true, (smap[charac.y][charac.x] ? 0.1 : lightning * 0.5));
+	charac.soul.exec(true, (smap[charac.y][charac.x] ? 0.1 : lightning));
 	saver = charac.soul.getOut();
 
 	charac.soul.dropOut();
-	charac.soul.dropPart(0.1 * (1 - lightning));
+	charac.soul.dropPart(lightning);
 	
 	charac.soul.setIn(saver, 1, 0);
 	
