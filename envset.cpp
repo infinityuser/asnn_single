@@ -13,18 +13,17 @@ namespace env {
 
     // network template presets ---
     const auto lays = {
-        $(24, {1}),
-        $(24, {2}),
+        $(24, {1}), // input layer
+        $(27, {2}), // output layer
         $(50, {3}), // hidden layers
-        $(24, {4}),
-        $(50, {5}), // hidden layers
-        $(24, {}),
+        $(50, {4}), // hidden layers
+        $(27, {}), // out 
     };
 
     const double defav = 0.1,
                  reser = 3,
 				 neumax = 1,
-				 impulse = 100;
+				 impulse = 500;
     const std::string name = "unit";
 
     // environment meta data ------ 

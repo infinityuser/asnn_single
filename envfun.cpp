@@ -27,7 +27,7 @@ void rebind (void) {
 }
 
 void getChoise (std::vector<double> &temp) {
-	for (int it = 0; it < 8; ++it) {
+	for (int it = 0; it < 9; ++it) {
 		temp[it] = temp[it * 3] + temp[it * 3 + 1] + temp[it * 3 + 2]; 
 	}
    
@@ -90,16 +90,15 @@ void makeEpoch (FILE * dump) {
 			}
 		}
 	
-	charac.soul.setIn(saver, 1, 0);
-	charac.soul.setIn(saver, 3, 0);
+	charac.soul.setIn(saver, 0, 0);
 
-	charac.soul.exec(true, (smap[charac.y][charac.x] ? 0.1 : lightning));
+	charac.soul.exec(true, (smap[charac.y][charac.x] ? 0.1 : lightning * 0.5));
 	saver = charac.soul.getOut();
 
 	charac.soul.dropOut();
-	charac.soul.dropPart(0.2 * lightning);
+	charac.soul.dropPart(0.1 * (1 - lightning));
 	
-	charac.soul.setIn(saver, 0, 0);
+	charac.soul.setIn(saver, 1, 0);
 	
 	getChoise(saver);
 
@@ -111,8 +110,6 @@ void makeEpoch (FILE * dump) {
 	else if (saver[dpos[5]] == 1) { ++charac.y; --charac.x; }
 	else if (saver[dpos[6]] == 1) --charac.x;
 	else if (saver[dpos[7]] == 1) { --charac.y; --charac.x; }
-	else exit(0);
-
 	
 	charac.y = modY(charac.y);
 	charac.x = modX(charac.x);
