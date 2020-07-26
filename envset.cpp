@@ -22,9 +22,9 @@ namespace env {
     };
 
     const double defav = 0.1,
-                 reser = 3,
+                 reser = 0.3,
 				 neumax = 1,
-				 impulse = 1000;
+				 impulse = 100;
     const std::string name = "unit";
 
     // environment meta data ------ 

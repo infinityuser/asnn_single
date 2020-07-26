@@ -51,19 +51,19 @@ int modX (int x) {
     return x; 
 }
 
-int corresp(int y, int x, int cy, int cx) {
+int corresp(int cy, int cx) {
 	double angle;
 
-	if (x - cx) {
-		angle = double(cy - y) / double(x - cx);
+	if (cx) {
+		angle = double(cy) / double(cx);
 		angle = atan(abs(angle)) * 180 / 3.14;
 	} else angle = 90;
 
-	if (cy - y >= 0) {
-		if (x - cx >= 0) angle = 90 - angle;
+	if (cy >= 0) {
+		if (cx >= 0) angle = 90 - angle;
 		else angle += 270;
 	} else {
-		if (x - cx >= 0) angle += 90;
+		if (cx >= 0) angle += 90;
 		else angle = 270 - angle;
 	}
 
@@ -81,7 +81,7 @@ void makeEpoch (FILE * dump) {
 			tx = modX(charac.x + x);
 
 			if (smap[ty][tx]) {
-				int iter = corresp(charac.y + y, charac.x + x, charac.y, charac.x);
+				int iter = corresp(-y, x);
 
 				saver[iter] = 
 					std::max(double(1) - sqrt(pow(ty - charac.y, 2) * pow(tx - charac.x, 2)) / zoom, saver[iter]);
