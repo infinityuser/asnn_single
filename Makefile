@@ -1,10 +1,10 @@
 kernel = ../kernel/kermdl.o
 
 build: main.cpp $(kernel)
-	g++ -o ./debug main.cpp $(kernel) -lpthread -lsfml-graphics -lsfml-window -lsfml-system -llapack -lblas -O2
+	g++ -o ./debug main.cpp $(kernel) -lpthread -lsfml-graphics -lsfml-window -lsfml-system
 
 kernel:
-	g++ -c ../kernel/src/build.cpp -lblas -llapack -O3
+	g++ -c ../kernel/src/build.cpp -O3
 	mv ./build.o ../kernel/kermdl.o 
 
 run:
