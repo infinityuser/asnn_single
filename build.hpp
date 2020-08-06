@@ -8,9 +8,9 @@
 #include <unistd.h>
 #include <cstdlib>
 #include <thread>
+#include <cmath>
 
 #include "../lib_sfml/SFML/Graphics.hpp"
-#include "../lib_arma/armadillo.hpp"
 #include "../kernel/kernel.hpp"
 #include "envset.cpp"
 #include "envvar.cpp"

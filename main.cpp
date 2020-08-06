@@ -9,24 +9,24 @@ int main (int argc, char * argv[]) {
 	std::thread listener(rebind);
 	listener.detach();
 
-    while (window.isOpen())
-    {
-        sf::Event event;
-        while (window.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed)
-                window.close();
+	while (window.isOpen())
+	{
+		sf::Event event;
+		while (window.pollEvent(event))
+		{
+			if (event.type == sf::Event::Closed)
+				window.close();
 			else if (event.type == event.MouseButtonPressed)
 				env::reInitLight(event.mouseButton.x, event.mouseButton.y, true);
-        }
+		}
 
-        if (vis) window.clear();
-        makeEpoch(dump);
-        if (vis) drawAll();
-        if (vis) window.display();
+		if (vis) window.clear();
+		makeEpoch(dump);
+		if (vis) drawAll();
+		if (vis) window.display();
 
-        usleep(actionTimer);
-    }
+		usleep(actionTimer);
+	}
  
-    return 0;
+	return 0;
 }

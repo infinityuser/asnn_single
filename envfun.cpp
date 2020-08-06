@@ -31,24 +31,24 @@ void getChoise (std::vector<double> &temp) {
 		temp[it] = temp[it * 3] + temp[it * 3 + 1] + temp[it * 3 + 2]; 
 	}
    
-    double buffer = 0;
-    for (int it = 0; it < 8; ++it)
-        if (temp[it] > buffer) buffer = temp[it];
+	double buffer = 0;
+	for (int it = 0; it < 8; ++it)
+		if (temp[it] > buffer) buffer = temp[it];
 
-    for (int it = 0; it < 8; ++it)
-        temp[it] /= buffer;
+	for (int it = 0; it < 8; ++it)
+		temp[it] /= buffer;
 }
 
 int modY (int y) {
-    if (y < 0) return y + sizeY;
-    else if (y >= sizeY) return y - sizeY;
-    return y;
+	if (y < 0) return y + sizeY;
+	else if (y >= sizeY) return y - sizeY;
+	return y;
 }
 
 int modX (int x) {
-    if (x < 0) return x + sizeX;
-    else if (x >= sizeX) return x - sizeX;
-    return x; 
+	if (x < 0) return x + sizeX;
+	else if (x >= sizeX) return x - sizeX;
+	return x; 
 }
 
 int corresp(int cy, int cx) {
