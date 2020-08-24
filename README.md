@@ -1,4 +1,4 @@
 # Results
-![](src/sess1.png)
-![](src/sess2.png)
-![](src/sess3.png)
+![](res/sess1.png)
+![](res/sess2.png)
+![](res/sess3.png)

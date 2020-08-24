@@ -8,7 +8,7 @@ void drawAll (void) {
 			if (smap[y][x])
 				tempRect.setFillColor(lightC);
 			else
-				tempRect.setFillColor(sf::Color(30, 30, 30));
+				tempRect.setFillColor(sf::Color(29, 29, 29));
 
 			window.draw(tempRect);
 		}

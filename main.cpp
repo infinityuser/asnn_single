@@ -2,7 +2,7 @@
 
 int main (int argc, char * argv[]) {
 	bool vis = false;
-	FILE * dump = fopen("dump.out", "w");
+	FILE * dump = fopen("dumps/dump", "w");
 
 	env::init();
 	if (argc > 1 && argv[1][0] == 'v') vis = true;

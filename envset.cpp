@@ -6,9 +6,9 @@ namespace env {
 	};
 
 	// environment data -----------
-	const int sizeX = 30, 
-	sizeY = 30,
-	step = 20,
+	const int sizeX = 40, 
+	sizeY = 40,
+	step = 12,
 	zoom = 10;
 
 	// network template -----------
