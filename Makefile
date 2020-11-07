@@ -1,9 +1,13 @@
-kernel = ../kernel/kermdl.o
-log = dumps/log
-prog = ./debug
+# $(envdir)/share 	- .so structures
+# $(envdir)/SFML 	- SFML headers
+# $(envdir)/kernel 	- kernel headers and sources
+# ALSO! $(envdir) path added into ld.so.conf
+
+logs = ./dumps/log
+envdir = /usr/local/lib/asnn/
 
 build:
-	g++ -o $(prog) main.cpp $(kernel) -lpthread -lsfml-graphics -lsfml-window -lsfml-system
+	g++ -o ./debug main.cpp -L$(envdir)/share -lkermdl -lsfml-graphics -lsfml-window -lsfml-system -lpthread -I$(envdir)
 
 run:
-	$(prog) v 2>$(log)
+	./debug v 2>$(logs)
