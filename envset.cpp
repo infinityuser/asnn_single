@@ -16,13 +16,14 @@ namespace env {
 		$(24, {1}), // input layer
 		$(24, {2}), // output layer
 		$(50, {3}), // hidden layers
-		$(24, {4}), // output layer
-		$(50, {5}), // hidden layers
+		$(50, {4}), // hidden layers
+		$(24, {5}), // output layer
+		$(50, {6}), // hidden layers
 		$(24, {}), // out 
 	};
 
 	const double defav = 0.1,
-	reser = 0.3,
+	reser = 0.23,
 	neumax = 1,
 	impulse = 1000;
 	const std::string name = "unit";

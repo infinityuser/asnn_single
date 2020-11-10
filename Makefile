@@ -1,13 +1,15 @@
-# $(envdir)/share 	- .so structures
-# $(envdir)/SFML 	- SFML headers
-# $(envdir)/kernel 	- kernel headers and sources
-# ALSO! $(envdir) path added into ld.so.conf
+# $(resources)			- local .so structures
+# $(resources)/SFML 	- SFML headers
+# $(resources)/kernel 	- kernel headers
 
 logs = ./dumps/log
-envdir = /usr/local/lib/asnn/
+resources = /home/ireoi/.lib
+reorganize = ./test
+
+all: build run
 
 build:
-	g++ -o ./debug main.cpp -L$(envdir)/share -lkermdl -lsfml-graphics -lsfml-window -lsfml-system -lpthread -I$(envdir)
+	g++ -o ./debug main.cpp -L$(resources) -lkermdl -lsfml-graphics -lsfml-window -lsfml-system -lpthread -I$(resources)/asnn
 
 run:
-	./debug v 2>$(logs)
+	$(reorganize) | ./debug v 2>$(logs)
