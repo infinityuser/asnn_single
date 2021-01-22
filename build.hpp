@@ -1,5 +1,7 @@
 #define $ std::pair<uint32_t, std::vector<uint32_t>>
 
+#include <signal.h>
+
 #include <cstdio>
 #include <ctime>
 #include <vector>

@@ -4,7 +4,7 @@
 
 logs = ./dumps/log
 resources = /home/ireoi/.lib
-reorganize = ./test
+reorganize = ./test.sh
 
 all: build run
 

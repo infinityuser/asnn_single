@@ -16,7 +16,6 @@ namespace env {
 		$(24, {1}), // input layer
 		$(24, {2}), // output layer
 		$(50, {3}), // hidden layers
-		$(50, {4}), // hidden layers
 		$(24, {5}), // output layer
 		$(50, {6}), // hidden layers
 		$(24, {}), // out 

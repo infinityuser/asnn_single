@@ -1,8 +1,15 @@
 #include "build.hpp"
 
+FILE * dump;
+void intrsig (int sig) {
+	fclose(dump);
+	exit(0);
+}
+
 int main (int argc, char * argv[]) {
 	bool vis = false;
-	FILE * dump = fopen("dumps/imprint", "w");
+	dump = fopen("dumps/imprint", "w");
+	signal(SIGINT, intrsig);
 
 	env::init();
 	if (argc > 1 && argv[1][0] == 'v') vis = true;

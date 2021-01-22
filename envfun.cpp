@@ -97,7 +97,7 @@ void makeEpoch (FILE * dump) {
 	saver = charac.soul.getOut();
 
 	charac.soul.dropOut();
-	charac.soul.dropPart(lightning);
+	charac.soul.dropPart(pow(-lightning + 1, 2));
 	
 	charac.soul.setIn(saver, 1, 0);
 	
