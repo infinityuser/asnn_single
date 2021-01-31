@@ -90,16 +90,18 @@ void makeEpoch (FILE * dump) {
 			}
 		}
 	
-	charac.soul.setIn(saver, 0, 0);
-	charac.soul.setIn(saver, 3, 0);
-
-	charac.soul.exec(true, (smap[charac.y][charac.x] ? 0.1 : lightning));
-	saver = charac.soul.getOut();
-
 	charac.soul.dropOut();
-	charac.soul.dropPart(pow(-lightning + 1, 2));
+	charac.soul.setIn(saver, 0, 0);
+	
+	charac.soul.exec(true, (lightning >= charac.last_light ?  lightning : -lightning / charac.last_light));
+	saver = charac.soul.getOut();
 	
 	charac.soul.setIn(saver, 1, 0);
+	//charac.soul.setIn(saver, 3, 0);
+	charac.last_light = lightning;
+	
+	//charac.soul.dropOut(); 
+	charac.soul.dropPart(lightning * 0.1);
 	
 	getChoise(saver);
 

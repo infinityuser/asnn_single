@@ -2,6 +2,7 @@ namespace env {
 	// structures ----------------
 	struct unit {
 		int x, y, state;
+		double last_light;
 		kernel::model soul;
 	};
 
@@ -15,9 +16,6 @@ namespace env {
 	const auto lays = {
 		$(24, {1}), // input layer
 		$(24, {2}), // output layer
-		$(50, {3}), // hidden layers
-		$(24, {5}), // output layer
-		$(50, {6}), // hidden layers
 		$(24, {}), // out 
 	};
 
